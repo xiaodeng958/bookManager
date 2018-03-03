@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title sec:authentication="name"></title>
+</head>
+
+<body>
+	<form th:action="@{/logout}" method="post">
+    	<div align="right">
+    		<input  type="submit" class="btn btn-primary" value="Logout"/>
+		</div>
+	</form>
+	
+	<!-- 
+		<div sec:authorize="hasRole('ROLE_ADMIN')">
+            <p class="bg-info" th:text="${book.extraInfo}"></p>
+        </div>
+        <div sec:authorize="hasRole('ROLE_USER')">
+            <p class="bg-info">No Info</p>
+        </div>
+    -->
+    
+    <form th:action="@{/findbookNoQuery}" method="get">
+    	<div >
+    		<input  type="submit" class="btn btn-primary" value="findbookNoQuery"/>
+		</div>
+	</form>
+	
+	<form th:action="@{/findbookQuery}" method="get">
+    	<div >
+    		<input  type="submit" class="btn btn-primary" value="findbookQuery"/>
+		</div>
+	</form>
+	
+	<!-- 
+    <div>
+    	<table align="center" width="394" border="1">
+  			<tr>
+    			<th width="75" scope="col">Title</th>
+    			<th width="104" scope="col">Content</th>
+   				<th width="193" scope="col">ExtraInfo</th>
+ 			</tr>
+ 			<tr th:each="book : ${books}">
+ 				<td th:text="${book.title}"></td>
+ 				<td th:text="${book.content}"></td>
+ 				<td th:text="${book.extraInfo}"></td>
+ 			</tr>
+ 		</table>
+    </div>
+     -->
+
+</body>
+</html>
+

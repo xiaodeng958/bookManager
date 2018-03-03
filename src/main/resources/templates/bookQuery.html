@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"> -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+				xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title sec:authentication="name"></title>
+</head>
+
+<body>
+	<form th:action="@{/logout}" method="post">
+    	<div align="right">
+    		<input  type="submit" class="btn btn-primary" value="Logout"/>
+		</div>
+	</form>
+	
+	<form th:action="@{/findbookQuery}" th:object="${bookQuery}" th:method="get">
+		<label class="col-sm-2 control-label" >title</label>
+		<div>
+			<input type="text" id="title" placeholder="请输入名称" th:field="*{title}"/>
+		</div>
+		<label class="col-sm-2 control-label" >content</label>
+		<div>
+			<input type="text" id="content" placeholder="请输入名称" th:field="*{content}"/>
+		</div>
+		<label class="col-sm-2 control-label" >extraInfo</label>
+		<div>
+			<input type="text" id="extraInfo" placeholder="请输入名称" th:field="*{extraInfo}"/>
+		</div>
+		
+		<input type="submit" value="research"/>
+	</form>
+	
+    <div>
+     
+    	<table align="center" width="394" border="1">
+  			<tr>
+    			<th width="75" scope="col">Title</th>
+    			<th width="104" scope="col">Content</th>
+   				<th width="193" scope="col">ExtraInfo</th>
+ 			</tr>
+ 			<tr th:each="book : ${datas}">
+ 				<td th:text="${book.title}"></td>
+ 				<td th:text="${book.content}"></td>
+ 				<td th:text="${book.extraInfo}"></td>
+ 			</tr>
+ 		</table>
+ 		
+ 		<div th:include="page :: pager" th:remove="all"></div>
+ 		 
+    </div>
+
+</body>
+</html>
+
