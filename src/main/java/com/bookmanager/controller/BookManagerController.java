@@ -48,19 +48,6 @@ public class BookManagerController {
 	@RequestMapping("/bookList")
 	public String getBooks(Model model) {
 		
-//		List<BookInfo> books = new ArrayList<BookInfo>();
-//		
-//		BookInfo book = null;
-//		for (int i = 0; i < 20; i++) {
-//			book = new BookInfo();
-//			book.setTitle("sanguoyanyi".concat(String.valueOf(i)));
-//			book.setContent("fsadfasdf");
-//			book.setExtraInfo("ExtraInfo");
-//			bookInfoRepository.save(book);
-//		}
-//		books = bookInfoRepository.findAll();
-//
-//		model.addAttribute("books", books);
 		return "bookList";
 	}
 	
