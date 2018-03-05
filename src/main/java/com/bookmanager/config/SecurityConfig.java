@@ -36,7 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 //		super.configure(http);
 		http.authorizeRequests()
-		.antMatchers("/bower_components/**", "/dist/**", "/plugins/**").permitAll()  // 允许访问资源
+		.antMatchers("/bower_components/**", "/dist/**", "/plugins/**", "/documentation/**", "/pages/**", "/html/**").permitAll()  // 允许访问资源
+		.antMatchers("/register").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.formLogin().loginPage("/login").permitAll()
