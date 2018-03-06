@@ -15,15 +15,16 @@ public class BookCommandRunner implements CommandLineRunner {
 	
 	@Override
 	public void run(String... arg0) throws Exception {
-		BookInfo bookInfo;
+//		BookInfo bookInfo;
 		for (int i = 0; i < 20; i++) {
-			bookInfo = new BookInfo();
-			bookInfo.setAuthor("zhangsan");
-			bookInfo.setContent("good book");
-			bookInfo.setISBN("AHBS" + String.valueOf(i));
-			bookInfo.setLink("linkAddress:" + String.valueOf(i));
-			bookInfo.setTitle("sanguoyanyi" + String.valueOf(i));
-			bookInfoRepository.save(bookInfo);
+//			bookInfo = new BookInfo();
+//			bookInfo.setAuthor("zhangsan");
+//			bookInfo.setContent("good book");
+//			bookInfo.setISBN("AHBS" + String.valueOf(i));
+//			bookInfo.setLink("linkAddress:" + String.valueOf(i));
+//			bookInfo.setTitle("sanguoyanyi" + String.valueOf(i));
+//			bookInfo.setExtraInfo("extraInfo");
+//			bookInfoRepository.save(bookInfo);
 		}
 	}
 

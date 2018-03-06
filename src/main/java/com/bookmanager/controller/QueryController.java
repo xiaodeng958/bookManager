@@ -24,12 +24,6 @@ public class QueryController {
 	@Autowired
 	BookInfoQueryService bookInfoQueryService;
 	
-	@RequestMapping("/register")
-	public String register(Model model) {
-		System.out.println("register");
-		return "html/register";
-	}
-	
 	@RequestMapping(value="/bookNoQuery", method=RequestMethod.GET)
 	public String findbookNoQuery(Model model ,@RequestParam(value="page", defaultValue="0") Integer page
 			, @RequestParam(value="size", defaultValue="5") Integer size) {

@@ -16,6 +16,7 @@ public class BookInfo {
     private String author;
     private String ISBN;
     private String link;
+    private String extraInfo;
     
     public BookInfo () {
 		
@@ -70,6 +71,14 @@ public class BookInfo {
 
 	public void setLink(String link) {
 		this.link = link;
+	}
+
+	public String getExtraInfo() {
+		return extraInfo;
+	}
+
+	public void setExtraInfo(String extraInfo) {
+		this.extraInfo = extraInfo;
 	}
     
 }

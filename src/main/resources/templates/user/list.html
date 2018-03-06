@@ -32,22 +32,14 @@
 					    	<table class="table table-bordered table-striped">
 					    		<thead>
 					  				<tr>
-						    			<th >Title</th>
-						    			<th >Content</th>
-						   				<th >Author</th>
-						   				<th >ISBN</th>
-						   				<th >Link</th>
-						   				<th >ExtraInfo</th>
+						    			<th >Id</th>
+						    			<th >Username</th>
 					 				</tr>
 					 			</thead>
 					 			<tbody>
-						 			<tr th:each="book : ${datas}">
-						 				<td th:text="${book.title}"></td>
-						 				<td th:text="${book.content}"></td>
-						 				<td th:text="${book.author}"></td>
-						 				<td th:text="${book.ISBN}"></td>
-						 				<td th:text="${book.link}"></td>
-						 				<td th:text="${book.extraInfo}"></td>
+						 			<tr th:each="user : ${datas}">
+						 				<td th:text="${user.id}"></td>
+						 				<td th:text="${user.username}"></td>
 						 			</tr>
 					 			</tbody>
 					 		</table>

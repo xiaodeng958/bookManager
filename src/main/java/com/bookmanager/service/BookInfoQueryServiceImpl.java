@@ -1,7 +1,5 @@
 package com.bookmanager.service;
 
-import java.awt.print.Book;
-
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;

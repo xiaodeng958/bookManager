@@ -36,11 +36,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 //		super.configure(http);
 		http.authorizeRequests()
 		.antMatchers("/bower_components/**", "/dist/**", "/plugins/**", "/documentation/**", "/pages/**", "/html/**").permitAll()  // 允许访问资源
-		.antMatchers("/register").permitAll()
+		.antMatchers("/user/register").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.formLogin().loginPage("/login").permitAll()
-		.failureUrl("/login?error=true").defaultSuccessUrl("/bookList").permitAll()
+		.failureUrl("/login?error=true").defaultSuccessUrl("/").permitAll()
 		.and()
 		.logout().permitAll();
 		
