@@ -13,16 +13,18 @@ public class BookInfo {
 	private Long id;
 	private String title;
     private String content;
-    private String extraInfo;
+    private String author;
+    private String ISBN;
+    private String link;
     
     public BookInfo () {
 		
 	}
     
-    public BookInfo(String title, String content, String extraInfo) {
+    public BookInfo(String title, String content, String author) {
         this.title = title;
         this.content = content;
-        this.extraInfo = extraInfo;
+        this.author = author;
     }
     
 	public Long getId() {
@@ -45,11 +47,29 @@ public class BookInfo {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	public String getExtraInfo() {
-		return extraInfo;
+
+	public String getAuthor() {
+		return author;
 	}
-	public void setExtraInfo(String extraInfo) {
-		this.extraInfo = extraInfo;
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public String getISBN() {
+		return ISBN;
+	}
+
+	public void setISBN(String iSBN) {
+		ISBN = iSBN;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
     
 }
