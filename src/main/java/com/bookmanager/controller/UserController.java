@@ -1,7 +1,5 @@
 package com.bookmanager.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.bookmanager.dao.SysUserRepository;
 import com.bookmanager.domain.SysUser;
+import com.bookmanager.domain.UserBean;
 
 @Controller
 @RequestMapping("/user")
@@ -31,9 +30,10 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/addUser", method=RequestMethod.POST)
-	public String addUser(@ModelAttribute SysUser Sysuser) {
-		System.out.println(Sysuser.getUsername());
-		System.out.println(Sysuser.getPassword());
+	public String addUser(@ModelAttribute(value="userBean") UserBean userBean, Model model) {
+		
+		System.out.println(userBean.getUsername());
+		System.out.println(userBean.getPassword());
 		
 		return "login";
 	}
